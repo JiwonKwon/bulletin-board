@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
+<head lang="ko">
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <title>Board Form</title>
     <link rel="stylesheet" th:href="@{/css/base.css}"/>
@@ -30,10 +30,10 @@
                 </thead>
                 <tbody>
                     <tr th:each="board : ${boardList}">
-                        <td th:text="${board.index}"></td>
-                        <td><a th:href="'board?index='+${board.index}"th:text="${board.title}"></a></td>
-                        <td th:text="${#temporals.format(board.createDate,'yyyy-MM-dd HH:mm')}"></td>
-                        <td th:text="${#temporals.format(board.updateDate,'yyyy-MM-dd HH:mm')}"></td>
+                        <td th:text="${board.idx}"></td>
+                        <td><a th:href="'board?idx='+${board.idx}"th:text="${board.title}"></a></td>
+                        <td th:text="${#temporals.format(board.createdDate,'yyyy-MM-dd HH:mm')}"></td>
+                        <td th:text="${#temporals.format(board.updatedDate,'yyyy-MM-dd HH:mm')}"></td>
                     </tr>
                 </tbody>
             </table>

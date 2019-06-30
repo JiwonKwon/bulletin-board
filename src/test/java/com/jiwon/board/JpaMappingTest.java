@@ -37,11 +37,11 @@ public class JpaMappingTest {
                 .createDate(LocalDateTime.now())
                 .build());
 
-                    boardRepository.save(Board.builder()
+        boardRepository.save(Board.builder()
                 .title(boardTestTitle)
                 .content("내용이다!!!!")
-                .createDate(LocalDateTime.now())
-                .updateDate(LocalDateTime.now())
+                .createdDate(LocalDateTime.now())
+                .updatedDate(LocalDateTime.now())
                 .user(user).build());
     }
 

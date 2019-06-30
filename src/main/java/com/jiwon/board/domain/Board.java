@@ -24,7 +24,7 @@ public class Board implements Serializable {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY) //기본키 자동할당
-    private long index;
+    private long idx;
 
     @Column
     private String title;
@@ -33,21 +33,21 @@ public class Board implements Serializable {
     private String content;
 
     @Column
-    private LocalDateTime createDate;
+    private LocalDateTime createdDate;
 
     @Column
-    private LocalDateTime updateDate;
+    private LocalDateTime updatedDate;
 
     @OneToOne(fetch = FetchType.LAZY)
     private User user;
 
     @Builder
-    public Board(String title, String content, LocalDateTime createDate, LocalDateTime updateDate,
+    public Board(String title, String content, LocalDateTime createdDate, LocalDateTime updatedDate,
                  User user) {
         this.title = title;
         this.content = content;
-        this.createDate = createDate;
-        this.updateDate = updateDate;
+        this.createdDate = createdDate;
+        this.updatedDate = updatedDate;
         this.user = user;
     }
 }

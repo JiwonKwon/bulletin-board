@@ -18,9 +18,9 @@ public class BoardController {
     BoardService boardService;
 
     @GetMapping({"", "/"})
-    public String board(@RequestParam(value = "index", defaultValue = "0") long index,
+    public String board(@RequestParam(value = "idx", defaultValue = "0") long idx,
                         Model model) {
-        model.addAttribute("board", boardService.findBoardByIndex(index));
+        model.addAttribute("board", boardService.findBoardByIndex(idx));
         return "/board/form";
     }
 
@@ -29,25 +29,4 @@ public class BoardController {
         model.addAttribute("boardList", boardService.findBoardList(pageable));
         return "/board/list";
     }
-
-    /*@RequestMapping(value="/board/post", method=RequestMethod.POST)
-    public int insertBoard(Board board, Model model) {
-        return 0;
-    }
-
-    @RequestMapping(value="/board/board", method=RequestMethod.GET)
-    public Board selectBoard(Board board, Model model) {
-        return null;
-    }
-
-    @RequestMapping(value="/board/board", method=RequestMethod.PUT)
-    public int updateBoard(Board board, Model model) {
-        return 0;
-    }
-
-    @RequestMapping(value="/board/board", method=RequestMethod.DELETE)
-    public int deleteBoard(int boardNo) {
-        return 0;
-    }*/
-
 }
